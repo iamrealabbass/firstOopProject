@@ -1,10 +1,12 @@
 <?php
 //define a trait
 trait like {
+//define function
 public function AddLike($likely) {
     echo "you like  ".$likely.'<br>';
   }
 }
+//define first class
 class Product {
 	use like;
     // Properties
@@ -28,12 +30,14 @@ class Product {
     //get id
     function get_id()
     {
+        //use public id
         return $this->id;
     }
 
     //get name
     function get_name() 
     {
+        
         return $this->name;
     }
     //private func
@@ -45,7 +49,8 @@ class Product {
     protected function MyProtectMethod()
     {
         echo "This is a Protected method<br>"; 
-    }  //protected func
+    } 
+     //define a finall function
     final function MyFinalMethod()
     {
         echo "This is a final method<br>"; 
@@ -53,6 +58,7 @@ class Product {
   //pubic function print protected & private property & function
     public function MyPrint()
     {
+      //use protected & private property
       echo $this->user.'<br/>';
       echo $this->price.'<br/>';
     }
@@ -69,30 +75,35 @@ class newProduct extends Product{
 	 echo 'override myprint <br/>';
   }
 }
+//dfine abstract class
 abstract class AbstractProduct
 {
+    //define abstract function
     abstract protected function MyPrint($name);
+    //define functional method
 	function Publicfunc()
 	{
 		echo 'abstract class have public method<br>';
 	}
 }
-
+//define class from abstract class
 class Digital extends AbstractProduct
 {
-
+    //add body of myprint
     public function MyPrint($name)
 	{
        echo $name.' a Digital production<br>';
     }
 }
-
+//define interface
 interface DigitalProduct {
   public function Brand();
 }
+//define onther interface
 interface mobile{
   public function HaveCamera();
 }
+//class implement from tow interface
 class applemobile implements DigitalProduct,mobile {
   public function Brand() {
     echo " apple <br>";
